@@ -6,7 +6,8 @@ import {
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTreeModule    
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -36,6 +38,9 @@ export const createTranslateLoader = (http: HttpClient) => {
         LayoutModule,
         OverlayModule,
         HttpClientModule,
+        MatTreeModule,
+        MatIconModule,    
+        FormsModule,    
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -43,6 +48,11 @@ export const createTranslateLoader = (http: HttpClient) => {
                 deps: [HttpClient]
             }
         })
+    ],
+    exports: [
+        MatTreeModule,
+        MatIconModule,
+        FormsModule     
     ],
     providers: [],
     bootstrap: [AppComponent]

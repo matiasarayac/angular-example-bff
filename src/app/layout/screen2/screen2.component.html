@@ -1,3 +1,15 @@
-<p>
-  screen2 works!
-</p>
+  
+<button mat-raised-button color="primary" (click)="getCars()" *ngIf=!carsEmpty()>Obtener lista de autos</button>
+<button mat-raised-button color="basic" (click)="emptyCars()" *ngIf=carsEmpty()>Vaciar lista de autos</button>
+
+<div *ngIf=carsEmpty()>
+    <mat-list>        
+        <h3 mat-subheader>Lista de Autos</h3>
+        <mat-list-item *ngFor="let car of cars">
+          <mat-icon mat-list-icon>directions_cars</mat-icon>
+          <h4 mat-line>{{car.model}}</h4>
+          <p mat-line> {{car.color}} </p>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+</div>
