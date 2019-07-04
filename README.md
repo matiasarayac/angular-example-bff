@@ -18,6 +18,24 @@ $ npm start
 $ npm run build
 ```
 
+Para ejecución local y conexión con los microservicios es necesario deshabilitar web-security del browser para no tener problemas de CORS en los microservicios. Para Chrome:
+Windows: 
+```bash
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir
+```
+
+Linux:
+```bash
+google-chrome  --disable-web-security --user-data-dir
+```
+
+OSX:
+```bash
+open /Applications/Google\ Chrome.app --args --user-data-dir --disable-web-security
+```
+
+
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
